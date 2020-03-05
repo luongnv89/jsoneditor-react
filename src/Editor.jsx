@@ -143,6 +143,12 @@ export default class Editor extends Component {
         }
     }
 
+    componentWillReceiveProps(newProps) {
+        if (this.props.value !== newProps.value) {
+            this.jsonEditor.set(newProps.value);
+        }
+    }
+
     setRef(element) {
         this.htmlElementRef = element;
         if (this.props.innerRef) {
